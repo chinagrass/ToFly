@@ -1,6 +1,6 @@
 <?php
 namespace Itofly;
-//注册树模式
+//注册器模式
 class Register{
     protected static $objects;
     public static function set($alias,$object){
