@@ -1,4 +1,5 @@
 <?php
+
 class Test1{
     public static function test()
     {
