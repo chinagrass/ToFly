@@ -33,6 +33,7 @@ class Application
         $c_low = strtolower($c);
         $c = ucwords($c);
         $class = '\\App\\Controller\\' . str_replace(".php", "", $c);
+        !$v && $v = 'index';
         $obj = new $class($c, $v);
 
         $controller_config = $this->config['controller'];
