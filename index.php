@@ -3,7 +3,7 @@
 define('BASEDIR', __DIR__);
 include BASEDIR . '/Itofly/Loader.php';
 spl_autoload_register('\\Itofly\\Loader::autoload');
-\Itofly\Application::getInstance()->dispatch();
+Itofly\Application::getInstance(BASEDIR)->dispatch();
 
 /*//栈 先进后出
 $stack = new SplStack();
