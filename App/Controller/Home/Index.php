@@ -1,7 +1,10 @@
 <?php
+
 namespace App\Controller\Home;
-class Index{
-    public static function test(){
-        echo __METHOD__."\n";
+class Index
+{
+    public static function test()
+    {
+        echo __METHOD__ . "\n";
     }
 }
