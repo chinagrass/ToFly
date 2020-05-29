@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
-class Index
+use Itofly\Controller;
+
+class Index extends Controller
 {
     public function index()
     {
