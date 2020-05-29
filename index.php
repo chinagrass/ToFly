@@ -1,8 +1,9 @@
 <?php
 /**入口文件*/
-define('BASEDIR',__DIR__);
-include BASEDIR.'/Itofly/Loader.php';
+define('BASEDIR', __DIR__);
+include BASEDIR . '/Itofly/Loader.php';
 spl_autoload_register('\\Itofly\\Loader::autoload');
+\Itofly\Application::getInstance()->dispatch();
 
 /*//栈 先进后出
 $stack = new SplStack();
@@ -38,4 +39,4 @@ echo $object -> test();
 echo $object::test();
 echo $object;
 echo $object();*/
-$db = \Itofly\Factory::createDatabase();
+//$db = \Itofly\Factory::createDatabase();
