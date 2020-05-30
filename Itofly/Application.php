@@ -27,15 +27,19 @@ class Application
 
     function dispatch()
     {
-        $uri = $_SERVER['SCRIPT_NAME'];
-        list($c, $v) = explode('/', trim($uri, '/'));
-
+        $uri = $_SERVER['QUERY_STRING'];
+        if ($uri) {
+            list($c, $v) = explode('/', trim($uri, '/'));
+        } else {
+            list($c, $v) = ["index", "index"];
+        }
         $c_low = strtolower($c);
         $c = ucwords($c);
-        $class = '\\App\\Controller\\' . str_replace(".php", "", $c);
-        !$v && $v = 'index';
+        $class = '\\App\\Controller\\' . $c;
+        if (!class_exists($class)) {
+            die("page not found");
+        }
         $obj = new $class($c, $v);
-
         $controller_config = $this->config['controller'];
         $decorators = array();
         if (isset($controller_config[$c_low]['decorator'])) {

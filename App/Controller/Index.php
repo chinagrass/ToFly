@@ -10,4 +10,9 @@ class Index extends Controller
     {
         echo "hello to fly";
     }
+
+    public function login()
+    {
+        echo "login";
+    }
 }
