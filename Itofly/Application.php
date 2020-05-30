@@ -28,7 +28,7 @@ class Application
     function dispatch()
     {
         $uri = $_SERVER['REQUEST_URI'];
-        $uri = strstr($uri, '?', true);
+        strstr($uri, '?', true) && $uri = strstr($uri, '?', true);
         if ($uri) {
             list($c, $v) = explode('/', trim($uri, '/'));
         } else {
